@@ -1,77 +1,138 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Bootstrap 4, from LayoutIt!</title>
-
-    <meta name="description" content="Source code generated using layoutit.com">
-    <meta name="author" content="LayoutIt!">
-
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-
-  </head>
-  <body>
-
-    <div class="container-fluid">
-	<div class="row">
-		<div class="col-md-12">
-			<h3>
-				CCycDB: an integrative knowledgebase to fingerprint microbial carbon cycling processes
-			</h3>
-			<ol class="list-unstyled">
-				<li class="list-item">
-					Lorem ipsum dolor sit amet
-				</li>
-				<li class="list-item">
-					Consectetur adipiscing elit
-				</li>
-				<li class="list-item">
-					Integer molestie lorem at massa
-				</li>
-				<li class="list-item">
-					Facilisis in pretium nisl aliquet
-				</li>
-				<li class="list-item">
-					Nulla volutpat aliquam velit
-				</li>
-				<li class="list-item">
-					Faucibus porta lacus fringilla vel
-				</li>
-				<li class="list-item">
-					Aenean sit amet erat nunc
-				</li>
-				<li class="list-item">
-					Eget porttitor lorem
-				</li>
-			</ol> <a href="#" class="btn btn-md btn-link" type="button">Carbon Fixation</a>
-			<div class="jumbotron">
-				<h2>
-					Hello, world!
-				</h2>
-				<p>
-					This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.
-				</p>
-				<p>
-					<a class="btn btn-primary btn-large" href="#">Learn more</a>
-				</p>
-			</div> 
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>CCyCdb-HOME</title>
+	<style type="text/css">
+		/* 更改页面所有字体*/
+		body {
+            font-family:Verdana, Arial, sans-serif;
+        }
+		
+        /* 使用CSS美化大标题 */
+        h1 {
+            background-color: #375D80;
+			font-size: 35px; /* 设置字体大小 */
+            color: white; /* 设置文字颜色 */
+            text-align: left; /* 设置文字居中 */
+            margin-bottom: 10px; /* 添加底部间距 */
+			padding: 20px;
+        }
+		
+		/* 更改页面图片大小 */
+		img {
+            max-width: 100%;
+            height: auto;
+        }
+		
+		 /* 定义索引栏的外观 */
+		#menuleft {
+            width: 150px; /* 左侧索引栏的宽度 */
+            background-color: white; /* 背景颜色 */
+            padding: 20px; /* 内边距，用于创建间距 */
+            float: left; /* 左浮动，使其位于页面左侧 */
+			border: 2px solid #375D80 ; 
+		}
+		
+		/* 设置索引栏内链接的样式 */
+        #menuleft a {
+            display: block; /* 将链接元素转换为块级元素，以占据整个宽度 */
+            padding: 10px 5px; /* 链接内边距 */
+			font-size: 16px; /* 字体大小 */
+            text-decoration: none; /* 移除下划线 */
+            color: black; /* 链接文本颜色 */
+			font-family: Verdana, Arial, sans-serif ;
+			line-height: 1.5;
 			
-			<h3 class="spip">
-				Contact Us
-			</h3>
-			<p>
-				Email : <a href="mailto:cazy@univ-amu.fr?subject=CAZy-Contact:" class="spip_mail">z</a>houjiayin@163.com
-			</p>
-		</div>
-	</div>
-</div>
+        }
+		
+		#menuleft a:hover {
+            background-color: #3B7197; /* 鼠标悬停时的背景颜色 */
+        }
+		
+		/* 右侧边框容器样式 */
+        .box-container {
+            margin-left: 20px; /* 与左侧索引栏之间的距离 */
+            display: flex;
+            flex-direction: column; /* 上下布局 */
+        }
+		
+		/* 右侧方框样式 */
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/scripts.js"></script>
-  </body>
+        .box1 {
+			margin-left: 20px; /* 与左侧方框 */
+			margin-bottom: 20px; /* 方框之间的垂直间距 */
+            width: 1100px; 
+            float: left;
+            background-color: white;
+            padding: 8px;
+            box-sizing: border-box;
+			border: 1.5px solid #375D80
+        }
+		
+		.box2 {
+			margin-left: 20px;
+            width: 1000px; 
+            float: left;
+            background-color: white;
+            padding: 10px;
+            box-sizing: border-box;
+			border: 0px solid #375D80
+        }
+    </style>
+	
+</head>
+	
+	
+<body>
+    <h1>CCycDB: an integrative knowledgebase to fingerprint microbial carbon cycling processes</h1>
+	<hr>
+	
+	<!-- 左侧索引栏 -->
+	<div id="menuleft">
+        <a href="#">Home</a>
+		<a href="#">CCycDB Overview</a>
+		<a href="#">Definitions</a>
+		<a href="#">Usage and Examples</a>
+		<a href="https://zenodo.org/record/8324818/">Date download</a>
+		<a href="#">Citing CCycDB</a>
+		<a href="#">Other databases</a>
+		<a href="https://faculty.sdu.edu.cn/tuqichao/zh_CN/index.html/">About us</a>      
+    </div>
+	
+	<!-- 右侧边框容器 -->
+    <div class="box-container">
+      <blockquote>
+        <h2> Welcom to the CCycDB ! </h2>
+      </blockquote>
+		
+      <!-- 第一个方框 -->
+        <div class="box1">
+          <p><strong>CCycDB</strong> is a knowledge-based functional gene database for accurate metagenomic profiling of carbon cycling microbial communities. CCycDB contains 4,572 genes with 10,548,067 targeted sequences involved in six modules covers 92 specific pathways. </p>
+		  <p> Please see "" for more details. </p>
+        </div>
+		
+	<!-- 第二个方框 -->
+    <div class="box2">
+		<h2>CCycDB Modules</h2>
+		<ul>
+			<li><p>Carbon fixation</p>
+			<li>Carbon release</p>
+			<li>Organic biosynthesis</p>
+			<li>Organic degradation</p>
+			<li>Organic transformation</p>
+			<li>Transporters</li>
+			
+		</ul>
+	</div>
+
+
+  </div>
+
+
+
+
+  
+</body>
 </html>
