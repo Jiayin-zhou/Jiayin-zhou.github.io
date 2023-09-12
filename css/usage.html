@@ -52,16 +52,60 @@
 			margin-left: 0; /* 取消左侧缩进 */
 			padding-left: 0; /* 取消左侧填充 */
 			margin-left: 55px;
-			
 		}
+		
+		.text{
+			font-size: 16px;
+			color: black;
+			line-height:1.5;
+			text-align: left;
+			margin-left: 55px;
+		}
+		
+		
+		/* 定义方框的样式 */
+        .graybox {
+            background-color: #f2f2f2; /* 使用浅灰色作为背景颜色 */
+			width: 80%;
+            padding-left: 0px; /* 添加内边距以增加文本与边框的间距 */
+			padding-bottom: 10px;
+			margin-left: 55px;
+			margin-bottom: 100px;
+            border: 0px solid #ccc; /* 添加边框 */
+            border-radius: 5px; /* 添加圆角 */
+			box-sizing: border-box;
+			max-height: 500px; /* 设置最大高度，超出时会显示滚动条 */
+			overflow-y: auto; /* 显示垂直滚动条 */
+			overflow-x: auto; 
+			height:auto;
+			
+        }
+		
+		.td-left {
+        width:150px;
+        padding-left: 0px;
+        vertical-align: top; /* 顶端对齐 */
+		text-align: left;
+		line-height: 30px;
+		}
+		
+		.td-right {
+        width: 1200px;
+        padding-left: 0px;
+        vertical-align: top; /* 顶端对齐 */
+		line-height: 30px;
+		}
+		
+		.top-align tr {
+        vertical-align: top;
+		}
+		
 		
 		/* 更改页面图片大小 */
 		img {
             max-width: 100%;
             height: auto;
         }
-		
-		
 		
 		<!-- 第二个方框 -->
 		#menuleft {
@@ -97,17 +141,17 @@
 <body>
 	<h1>CCycDB-Usage and Examples </h1>
 	<hr>
-  <h2>A guide to analyzing metagenomic data with CCycDB</h2>
+    <h2>A guide to analyzing metagenomic data with CCycDB</h2>
 
 	
 	<!--  文件类型 -->
-  <div>
+   <div>
   	<h3>Step 0. Prepare your files</h3>
 	<p><strong>Input files</strong> supports 3 type of files</p>
 	  
 	  <ul>
 		<p><li><b>Read-based</b></li></p>
-		<p>Raw Data (clean reads ) and Merged Reads (Forward and reverse reads were merged into longer sequences by the program e.g. PEAR)</p>
+		<p>Raw reads (clean reads) or Merged Reads (Forward and reverse reads were merged into longer sequences by the program e.g. PEAR)</p>
 	
 		<p><li><b>Assembly-based</b></li></p>
 		<p>Contigs generated through metagenome assmebly by (e.g., MEGAHIT, MetaSPAdes, SPAdes).</p>	
@@ -121,52 +165,72 @@
 	<div>
 	<h3>Step 1. Download </h3>
 	  <p>xx</p>
-	  <p>xx</p>	
-		
-		
+	  <p>xx</p>		
 	</div>
 
 	<!--  UASGE -->
 	<div>
 	<h3>Step 2. Annotation </h3>
+	  <p class="text">xxx</p>
 	  <p>xx</p>
-	  <p>xx</p>
-		
+	  <p class="text"><b>[Options:]</b></p>
+	</div>
+	<!-- 参数 -->
+	<div class="graybox">
+		<table class="table table-hover pt-2">
+			<tbody>
+			  <tr><td class="td-left">-situation</td>
+				<td class="td-right">the situation for input files (read-based|assembly-based|tabular)</td>
+			  </tr>
+			  <tr>
+				<td class="td-left">-wd</td>
+				<td class="td-right">The directory may or may not exist.</td>
+			  </tr>
+			  <tr>
+				<td class="td-left">-od</td>
+				<td class="td-right">File type. Specify the extensions of your input files (fastq, fastq.gz, fasta, fasta.gz, fq, fq.gz, fa, fa.gz) or (faa, fna). Please make sure that the filetype is correct according to the tool selected by -m. E.g., if -m usearch, the filetype supports (fastq|fasta); if -m blast, the filetype supports fasta.</td>
+			  </tr>
+			  <tr>
+				<td class="td-left">-m</td>
+				<td class="td-right">Database searching program you plan to use (diamond|usearch|blast)</td>
+			  </tr>
+			  <tr>
+				<td class="td-left">-f</td>
+				<td class="td-right">Specify the extensions of your sequence files (fastq, fastq.gz, fasta, fasta.gz, fq, fq.gz, fa, fa.gz) or (faa, fna). Please make sure that the filetype is correct according to the tool selected by -m. E.g., if -m usearch, the filetype supports (fastq|fasta); if -m blast, the filetype supports fasta.</td>
+			  </tr>
+			  <tr>
+				<td class="td-left">-s</td>
+				<td class="td-right">Sequence type (nucl|prot)</td>
+			  </tr>
+			  <tr>
+				<td class="td-left">-tpm</td>
+				<td class="td-right">(0|1)(default: 0). "1" need $sample.tpm exist in the work directory</td>
+			  </tr>
+			  <tr>
+				<td class="td-left">-norm</td>
+				<td class="td-right">(0|1).0: don`t need random sampling; 1: need random sampling.[-situation assembly-based] is a prerequisite for this parameter</td>
+			  </tr>
+			  <tr>
+				<td class="td-left">-rs</td>
+				<td class="td-right">the number of sequences for random subsampling. (default: the lowest number of sequences).Note: [-norm 1] is a prerequisite for this parameter.</td>
+			  </tr>
+			  <tr>
+				<td class="td-left">-thread</td>
+				<td class="td-right">number of CPUs (default: 2)</td>
+			  </tr>
+			</tbody>
+		</table>
+	</div>
+	
+	
+	<!-- 定义工具引用 -->
+	<div>
+	  <p class="text"> <b>Depending on the tools used, you may want to cite also:</b></p>
 		
 	</div>
 	
-	<th style="text-align: center">Item</th>
 	
-	
-<h3  style="text-align: center;">H3</h3>
-			<div class="table-responsive pt-3">
-			  <table class="table table-hover pt-2">
-				<thead>
-				<tr>
-				<th style="text-align: center">Item</th>
-				<th style="text-align: center">The Paper</th>
-				<th style="text-align: center">LJSpeech Model</th>
 
-				</tr>
-				</thead>
-				<tbody>
-				<tr><td style="text-align: center; width: 140px"><b>Transformer</b></td>
-				<td style="text-align: center; width: 140px"><b>Dim 1024 Heads 16 Layers 12</b></td>
-
-				</tr>
-				<tr>
-				<td style="text-align: center; width: 140px"><b>Dataset</b></td>
-				<td style="text-align: center; width: 140px"><b>LibriLight 60K hours</b></td>
-
-				</tr>
-				<tr>
-				<td style="text-align: center; width: 140px"><b>Machines</b></td>
-				<td style="text-align: center; width: 140px"><b>16 x V100 32GB GPU</b></td>
-
-				</tr>
-				</tbody>
-				</table>
-			</div>
 
 	
 	
